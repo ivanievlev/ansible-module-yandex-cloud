@@ -16,6 +16,15 @@ ansible-module-yandex-cloud is a set of ansible modules that manage a yandex clo
 2. git clone `https://github.com/arenadata/ansible-module-yandex-cloud`
 3. cd ansible-module-yandex-cloud
 
+### Luka run
+```
+yum install git python3
+python3 -m pip install -U pip
+pip3 install yandexcloud (установит в т.ч. https://github.com/yandex-cloud/python-sdk)
+sudo yum install ansible
+export ANSIBLE_CONFIG=/mnt/c/GIT/ansible-module-yandex-cloud/ansible.cfg
+```
+
 ## Documentation
 
 ### VM managment
