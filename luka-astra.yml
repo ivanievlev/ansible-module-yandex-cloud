@@ -1,0 +1,38 @@
+---
+- name: Yandex luka Playbook
+  hosts: localhost
+  tasks:
+    - name: Create vm
+      ycc_vm:
+        auth:
+          token: "{{ my_token }}"
+        name: "{{ host_name }}"
+        login: luka
+        public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAn/7oVx8uXsTBvQnGrmeWeBC0LAaDL6Aa73Us0TJMCiLiCt0TABelXExNQpgKufT5GITpDIMCpErRIRRHXozUwDV9KxbKXRhx2GvD0mPqN7cu1OBcnvltphsqmNGUSX39NaDaU4SmMmoeDV8ra1oWxgV86uj34/GRBEz+whdv7zqJHn0Qe0zWrpUe3ti+n3UclaIS0k9u7EWM1iZcNxLjZJsVZpxSX9exfWymzkkKYbJImij0/F+Ow7NuEuLunZ/sUb8bY18UCz3sQnQGKgNJ82LYpNoHlt67qjBmw0bQIgKAry9abr1rTtaI7IfBZRTeQkAEC1iA54usnvn9+Sp1Rw== luka
+        hostname: "{{ host_name }}"
+        zone_id: ru-central1-b
+        folder_id: b1g5doh9dmio1f60avlf
+        platform_id: "Intel Ice Lake"
+        core_fraction: 100
+        cores: 8
+        memory: 16
+        image_id: fd85m8uoh8dfem85s5e8
+#        image_family: centos-7
+        disk_type: hdd
+        disk_size: 50
+#        secondary_disks_spec:
+#            - autodelete: true
+#              description: disk1
+#              type: hdd
+#              size: 100
+#            - autodelete: true
+#              description: disk2
+#              type: hdd
+#              size: 100
+        subnet_id: e2l6au73higfrfo9gbat
+        secondary_subnet_id: null
+        assign_public_ip: false
+        preemptible: false
+#        metadata:
+#            user-data: "cloud init format in str"
+        state: present
